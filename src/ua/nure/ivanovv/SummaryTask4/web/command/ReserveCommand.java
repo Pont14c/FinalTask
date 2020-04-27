@@ -2,8 +2,6 @@ package ua.nure.ivanovv.SummaryTask4.web.command;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.servlet.ServletException;
@@ -18,7 +16,6 @@ import ua.nure.ivanovv.SummaryTask4.db.ReserveDao;
 import ua.nure.ivanovv.SummaryTask4.db.Role;
 import ua.nure.ivanovv.SummaryTask4.db.UserDao;
 import ua.nure.ivanovv.SummaryTask4.db.entity.User;
-import ua.nure.ivanovv.SummaryTask4.db.entity.UserOrder;
 
 public class ReserveCommand extends Command {
 

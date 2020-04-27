@@ -12,7 +12,6 @@ import org.apache.log4j.Logger;
 
 import ua.nure.ivanovv.SummaryTask4.Path;
 import ua.nure.ivanovv.SummaryTask4.db.UserDao;
-import ua.nure.ivanovv.SummaryTask4.db.entity.User;
 import ua.nure.ivanovv.SummaryTask4.db.entity.UserOrder;
 
 public class RemoveOrderCommand extends Command {

@@ -50,7 +50,6 @@ public class SortListBooksCommand extends Command {
 		}
 		
 		User user = (User) request.getSession().getAttribute("user");
-		String loginUser = user.getLogin();
 		Role userRole = Role.getRole(user);
 		log.trace("userRole --> " + userRole);
 
