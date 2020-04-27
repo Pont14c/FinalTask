@@ -1,0 +1,65 @@
+<%@ page pageEncoding="UTF-8"%>
+<%@ page import="ua.nure.ivanovv.SummaryTask4.db.Role"%>
+<%@ include file="/jspf/directive/taglib.jspf"%>
+<%@ include file="/jspf/head.jspf"%>
+
+<nav id="page-nav" style="z-index: 2">
+
+	<label for="hamburger">&#9776;</label> <input type="checkbox"
+		id="hamburger" />
+
+	<form action="/FinalTask/controller" method="post">
+		<input type="hidden" name="command" value="language" /> <input
+			name="ru" class="floated" type="image" value="ru"
+			${language=='ru' ? 'selected' : '' } src='/FinalTask/pic/ru.png'
+			style="height: 35px; widht: 40px;" /> <input name="en"
+			class="floated" type="image" value="en"
+			${language=='en' ? 'selected' : '' } src="/FinalTask/pic/uk.png"
+			style="height: 35px; widht: 40px;" /> <input type="hidden"
+			name="url" value="${pageContext.request.requestURL}" />
+	</form>
+
+	<ul>
+		<li><c:if test="${not empty user}">
+				<font class="user" size="3" color="white"><c:out
+						value="${user.firstName} ${user.lastName}" /></font>
+			</c:if> <c:if test="${not empty userRole}">
+				<font class="user" size="3" color="white"
+					style="margin-right: 15px;"> <c:out
+						value="(${userRole.name})" /></font>
+			</c:if></li>
+
+		<li><a href="/FinalTask/index.jsp"><fmt:message
+					key="header_jspf.home" /></a></li>
+		<c:choose>
+			<c:when test="${userRole.name == 'admin' }">
+				<li><a href="/FinalTask/controller?command=listUsers"><fmt:message
+							key="header_jspf.Users" /></a></li>
+				<li><a href="/FinalTask/controller?command=listOrders"><fmt:message
+							key="header_jspf.Users_Orders" /></a></li>
+				<li><a href="/FinalTask/controller?command=changeStatus"><fmt:message
+							key="header_jspf.Change_Status" /></a></li>
+				<li><a href="/FinalTask/controller?command=logout"><fmt:message
+							key="header_jspf.Logout" /></a></li>
+			</c:when>
+			<c:when test="${userRole.name == 'client'}">
+				<li><a href="/FinalTask/controller?command=leaveOrderPage"><fmt:message
+							key="header_jspf.Leave_Order" /></a></li>
+				<li><a href="/FinalTask/controller?command=chooseRoom"><fmt:message
+							key="header_jspf.Booking_room" /></a></li>
+				<li><a href="/FinalTask/controller?command=userOrders"><fmt:message
+							key="header_jspf.My_Orders" /></a></li>
+				<li><a href="/FinalTask/controller?command=logout"><fmt:message
+							key="header_jspf.Logout" /></a></li>
+			</c:when>
+		</c:choose>
+		<c:if test="${empty user}">
+			<li><a href="/FinalTask/register.jsp"><fmt:message
+						key="header_jspf.Register" /></a></li>
+			<li><a href="/FinalTask/login.jsp"><fmt:message
+						key="header_jspf.LogIn" /></a></li>
+		</c:if>
+	</ul>
+</nav>
+
+<div id="SLIDE_BG"></div>

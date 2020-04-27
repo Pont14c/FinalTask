@@ -1,0 +1,434 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+body {
+	z-index: 1;
+	overflow-x: hidden;
+}
+
+html {
+	font-family: sans-serif;
+}
+
+#page-nav {
+	width: 100%;
+	background: #000;
+	position: sticky;
+	top: 0;
+}
+
+#page-nav label, #hamburger {
+	display: none;
+}
+
+#page-nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#page-nav ul li {
+	display: inline-block;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#page-nav ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+	#page-nav label {
+		display: inline-block;
+		color: #fff;
+		font-style: normal;
+		font-size: 25px;
+		font-weight: bold;
+		padding: 20px;
+		float: right;
+	}
+	#page-nav ul li {
+		display: block;
+		background: black;
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+	}
+	#page-nav ul li {
+		border-top: 1px solid #333;
+	}
+	#page-nav ul {
+		display: none;
+	}
+	#page-nav input:checked ~ ul {
+		display: contents;
+	}
+}
+
+nav {
+	background-color: black;
+	border-bottom: 1px solid #EAEAEB;
+	height: 7.6%;
+}
+
+nav ul {
+	float: right;
+	margin-right: 25px;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	line-height: 50px;
+	margin-right: 10px;
+}
+
+nav ul li a {
+	position: relative;
+	color: #fff;
+	font-size: 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 7px 10px;
+	border: 3px;
+}
+
+.menu {
+	margin: 0 30px 0 0;
+}
+
+.floated {
+	float: left;
+	margin: 7px;
+	margin-top: 15px;
+}
+
+.menu a {
+	clear: right;
+	text-decoration: none;
+	color: white;
+	margin: 0 10px;
+	line-height: 70px;
+}
+
+label {
+	color: black;
+	font-size: 17px;
+}
+
+select {
+	float: right;
+}
+
+input[type="date" i] {
+	float: right;
+	max-height: 16px;
+}
+
+#SLIDE_BG {
+	width: 100%;
+	height: 92.3%;;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	backface-visibility: hidden;
+	animation: slideBg 10s linear infinite 0s;
+	animation-timing-function: ease-in-out;
+	background-image: url(../pic/1.jpg);
+}
+
+#res-menu {
+	display: none;
+}
+
+a.active, a:hover {
+	background: #878787;
+	transition: .5s;
+}
+
+@
+keyframes slideBg { 0%{
+	background-image: url(../pic/1.jpg);
+}
+
+50%{
+background-image
+
+
+:url
+
+
+(../
+pic
+/2
+
+
+.jpg
+
+
+);
+}
+100%{
+background-image
+
+
+:
+
+ 
+
+url
+
+
+(../
+pic
+/3
+
+
+.jpg
+
+
+);
+}
+}
+.login {
+	border: 1px solid #4F4F4F;
+	border-radius: 5px;
+	padding: 3em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: transLateX(-50%) transLateY(-50%);
+	background: #ffffff;
+	width: 350px;
+}
+
+.register {
+	border: 1px solid #4F4F4F;
+	border-radius: 5px;
+	padding: 3em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: transLateX(-50%) transLateY(-50%);
+	background: #ffffff;
+	width: 350px;
+}
+
+.chooseRoom {
+	border: 1px solid #4F4F4F;
+	border-radius: 5px;
+	padding: 3em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: transLateX(-50%) transLateY(-50%);
+	background: #ffffff;
+	width: 350px;
+}
+
+h2 {
+	margin-top: 0px;
+	margin-bottom: 10px;
+	font-family: Source Sans Pro;
+	font-weight: lighter;
+	color: #000000;
+	font-size: 35px;
+	text-align: center;
+}
+
+MyTag {
+	margin-top: 0px;
+	margin-bottom: 10px;
+	font-family: Source Sans Pro;
+	font-weight: lighter;
+	color: #000000;
+	font-size: 35px;
+	text-align: center;
+}
+
+button {
+	display: block;
+	width: 40%;
+	height: 50px;
+	font-size: 16px;
+	background: #000;
+	font-weight: lighter;
+	color: #fff;
+	border: 0px;
+	border-radius: 5px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.bookButton {
+	text-align: center;
+	padding-top: 10px;
+}
+
+input[type="submit"] {
+	height: 35px;
+	font-size: 16px;
+	background: #000;
+	font-weight: lighter;
+	color: #fff;
+	border: 0px;
+	border-radius: 5px;
+	margin-top: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	margin-right: auto;
+}
+
+element.style {
+	display: block;
+	width: 80%;
+	height: 50px;
+	font-size: 16px;
+	background: #000;
+	font-weight: lighter;
+	color: #fff;
+	border: 0px;
+	border-radius: 5px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+input[type="password"] {
+	display: block;
+	width: 80%;
+	height: 50px;
+	font-size: 16px;
+	background: #000;
+	font-weight: lighter;
+	color: #fff;
+	border: 0px;
+	border-radius: 5px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+input[type="text"] {
+	display: block;
+	width: 80%;
+	height: 50px;
+	font-size: 16px;
+	background: #000;
+	font-weight: lighter;
+	color: #fff;
+	border: 0px;
+	border-radius: 5px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.styleOrder2 {
+	margin-top: 15px;
+	width: 75%;
+	display: flex;
+	margin-left: auto;
+	justify-items: center;
+}
+
+.table-container {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: flex;
+	height: 399px;
+	overflow: auto;
+	margin-left: auto;
+	justify-content: center;
+	margin-right: auto;
+	width: 450px;
+}
+
+input#buttonInTable {
+	inline-size: -webkit-fill-available;
+    display: inline-block;
+	margin-top: 0px;
+	height:  100%;
+	min-height: 25px;
+	font-size: 16px;
+	background: #000;
+	font-weight: lighter;
+	color: #fff;
+	border: 0px;
+	border-radius: 5px;
+}
+
+.table-scrollable () { @scrollbar-width: 0.9em ; display: flex ;
+	flex-flow: column ; thead, tbody tr {
+	border: black;
+	table-layout: fixed;
+}
+
+thead {
+	flex: 0 0 auto;
+	width: ~"calc(100% - @{scrollbar-width})";
+}
+
+tbody {
+	display: block;
+	flex: 1 1 auto;
+	overflow-y: scroll; tr { width : 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+}
+}
+th {
+	background: #eee;
+}
+
+td {
+	height: 100%;
+	text-align: center;
+	border-style: solid;
+	border-width: thin;
+}
+
+.sortChoise {
+	display: flex;
+	margin-top: 10px;
+	justify-content: center;
+}
+
+input.submit2 {
+	height: 25px;
+	font-size: 16px;
+	background: #000;
+	font-weight: lighter;
+	color: #fff;
+	border: 0px;
+	border-radius: 5px;
+	margin-right: auto;
+	margin-top: auto;
+	margin-left: 15px;
+	display: flex;
+}
+
+div.styleOrder3 {
+	width: 80%;
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center
+}
+
+input[type="date" i] {
+	float: right;
+	max-height: 16px;
+	min-width: 140px;
+}
+
+h3 {
+	text-align: center;
+}
