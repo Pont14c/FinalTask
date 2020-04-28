@@ -1,0 +1,18 @@
+<%@ page pageEncoding="UTF-8"%>
+<%@ include file="/jspf/directive/taglib.jspf"%>
+<c:set var="language"
+	value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
+	scope="session" />
+<fmt:setLocale value="${sessionScope.language}" />
+<fmt:setBundle
+	basename="ua.nure.ivanovv.SummaryTask4.resources.resources" />
+
+<head>
+
+<title>${title}</title>
+
+<link rel="stylesheet" type="text/css" media="screen"
+	href="/FinalTask/style/st4.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
