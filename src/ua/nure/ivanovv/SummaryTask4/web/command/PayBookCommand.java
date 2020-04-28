@@ -54,6 +54,12 @@ public class PayBookCommand extends Command {
 
 		log.trace("client removed his own reservation -->" + loginUser);
 
+		session.removeAttribute("reserveAlready");
+		session.removeAttribute("orderLeaved");
+		session.removeAttribute("dateIn");
+		session.removeAttribute("dateOut");
+		session.removeAttribute("listRooms");
+		
 		log.debug("Command finished");
 		return Path.PAGE_BOOK_PAID;
 	}

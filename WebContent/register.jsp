@@ -7,15 +7,11 @@
 <%@ include file="/jspf/head.jspf"%>
 <body>
 	<%@ include file="/jspf/header.jspf"%>
-<<<<<<< HEAD
 	<c:if test="${not empty user}">
 		<%
 		response.sendRedirect(request.getContextPath() + "/index.jsp");
 		%>
 	</c:if>
-=======
-	
->>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 	<div class="register">
 		<form action="controller" method="post">
 			<h2><fmt:message key="register_jsp.register_title" /></h2>

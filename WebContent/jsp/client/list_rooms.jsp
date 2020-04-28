@@ -27,15 +27,12 @@
 				</div>
 			</div>
 		</form>
-<<<<<<< HEAD
 		<br>
 		<h2>
 			<c:if test="${dateIn != null && dateOut != null}">
 				 ${dateIn} <fmt:message key="change_status_jsp.untill" /> ${dateOut}
 			</c:if>
 		</h2>
-=======
->>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 		<c:if test="${listRooms != null}">
 			<c:if test="${listRooms.size()>0}">
 				<div class="table-container" style="height: 500px">

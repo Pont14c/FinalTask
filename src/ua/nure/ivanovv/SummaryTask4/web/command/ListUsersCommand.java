@@ -19,16 +19,11 @@ public class ListUsersCommand extends Command {
 	private static final long serialVersionUID = -1427293142709388385L;
 
 	private static final Logger log = Logger.getLogger(ListUsersCommand.class);
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		log.debug("Command starts");
-<<<<<<< HEAD
 
 		HttpSession session = request.getSession();
 		
@@ -45,14 +40,6 @@ public class ListUsersCommand extends Command {
 		users.remove(0);
 		session.setAttribute("listUsers", users);
 
-=======
-		
-		HttpSession session = request.getSession();
-		
-		List<User> users = new UserDao().allUser(); 
-		session.setAttribute("listUsers", users);		
-		
->>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 		log.debug("Command finished");
 		return Path.PAGE_LIST_USER;
 	}

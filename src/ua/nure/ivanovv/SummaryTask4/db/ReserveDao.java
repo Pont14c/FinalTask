@@ -18,7 +18,8 @@ public class ReserveDao {
 
 	private static final String SQL_LEAVE_ORDER = "INSERT INTO orders VALUES (DEFAULT,?,?,?,?,?,?)";
 
-	private static final String SQL_BOOKING_ORDER = "INSERT INTO booking VALUES (DEFAULT,?,?,?,1,?, CURDATE() + INTERVAL 2 DAY)";
+	private static final String SQL_BOOKING_ORDER = "INSERT INTO booking VALUES (DEFAULT,?,?,?,1,?,("
+			+ "case when ((CURDATE() + INTERVAL 2 DAY)<=date_in) then (CURDATE() + INTERVAL 2 DAY) else date_in end))";
 
 	private static final String SQL_SELECT_BY_CONDITION = "select * from rooms as r where r.price=? and r.place=? and r.room_stars=? "
 			+ "and r.id not in (select b.id_room from booking as b where (date_in<=? and ?<=date_out)"
@@ -179,9 +180,9 @@ public class ReserveDao {
 	public List<Room> findAllRooms() {
 		List<Room> allRooms = new ArrayList<>();
 		try (Connection con = DBManager.getInstance().getConnection();
-				PreparedStatement pstmt = con.prepareStatement(SQL_ALL_ROOMS);){
+				PreparedStatement pstmt = con.prepareStatement(SQL_ALL_ROOMS);) {
 			RoomMapper mapper = new RoomMapper();
-			try(ResultSet rs = pstmt.executeQuery();){
+			try (ResultSet rs = pstmt.executeQuery();) {
 				while (rs.next())
 					allRooms.add(mapper.mapRow(rs));
 			}
@@ -202,7 +203,7 @@ public class ReserveDao {
 	public List<Room> findAllRoomsByDates(Date dateIn, Date dateOut) {
 		List<Room> roomsList = new ArrayList<>();
 		try (Connection con = DBManager.getInstance().getConnection();
-				PreparedStatement pstmt = con.prepareStatement(SQL_SELECT_BY_DATES);){
+				PreparedStatement pstmt = con.prepareStatement(SQL_SELECT_BY_DATES);) {
 			RoomMapper mapper = new RoomMapper();
 			pstmt.setDate(1, dateIn);
 			pstmt.setDate(2, dateOut);
@@ -212,7 +213,7 @@ public class ReserveDao {
 			pstmt.setDate(6, dateIn);
 			pstmt.setDate(7, dateOut);
 			pstmt.setDate(8, dateOut);
-			try(ResultSet rs = pstmt.executeQuery();){
+			try (ResultSet rs = pstmt.executeQuery();) {
 				while (rs.next())
 					roomsList.add(mapper.mapRow(rs));
 			}
@@ -239,7 +240,7 @@ public class ReserveDao {
 		List<Integer> listrooms = new ArrayList<>();
 		boolean result = false;
 		try (Connection con = DBManager.getInstance().getConnection();
-				PreparedStatement pstmt = con.prepareStatement(SQL_SELECT_BY_CONDITION);){
+				PreparedStatement pstmt = con.prepareStatement(SQL_SELECT_BY_CONDITION);) {
 			con.setAutoCommit(false);
 			pstmt.setInt(1, price);
 			pstmt.setInt(2, places);
@@ -252,22 +253,22 @@ public class ReserveDao {
 			pstmt.setDate(9, in);
 			pstmt.setDate(10, out);
 			pstmt.setDate(11, out);
-			try(ResultSet rs = pstmt.executeQuery();){
+			try (ResultSet rs = pstmt.executeQuery();) {
 				while (rs.next()) {
 					listrooms.add(rs.getInt(1));
 				}
 			}
-			try(PreparedStatement pstmt2 = con.prepareStatement(SQL_BOOKING_ORDER);){
+			try (PreparedStatement pstmt2 = con.prepareStatement(SQL_BOOKING_ORDER);) {
 				pstmt2.setDate(2, in);
 				pstmt2.setDate(3, out);
 				pstmt2.setString(4, logingUser);
-				if (listrooms.size()>0 && !result) {
+				if (listrooms.size() > 0 && !result) {
 					pstmt2.setLong(1, listrooms.get(0));
 					int changed = pstmt2.executeUpdate();
 					if (changed == 1) {
 						pstmt.close();
 						result = true;
-						try(PreparedStatement pstmt3 = con.prepareStatement(SQL_REMOVE_ORDERS);){
+						try (PreparedStatement pstmt3 = con.prepareStatement(SQL_REMOVE_ORDERS);) {
 							pstmt3.setString(1, logingUser);
 							pstmt3.executeUpdate();
 						}
@@ -294,7 +295,7 @@ public class ReserveDao {
 	public String leaveOrder(int roomLvl, Date in, Date out, String logingUser, int price, int places) {
 		String forward = Path.PAGE_ERROR_PAGE;
 		try (Connection con = DBManager.getInstance().getConnection();
-				PreparedStatement pstmt = con.prepareStatement(SQL_LEAVE_ORDER);){
+				PreparedStatement pstmt = con.prepareStatement(SQL_LEAVE_ORDER);) {
 			pstmt.setDate(1, in);
 			pstmt.setDate(2, out);
 			pstmt.setString(3, logingUser);
