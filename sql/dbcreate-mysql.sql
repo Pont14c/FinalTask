@@ -98,9 +98,9 @@ CREATE TABLE booking(
     date_paid DATE
 );
 
-INSERT INTO booking VALUES(default, 1, CURDATE(), CURDATE()+5, 3, 'admin', CURDATE()+5);
-INSERT INTO booking VALUES(default, 2, CURDATE(), CURDATE()+5, 3, 'admin', CURDATE()+5);
-INSERT INTO booking VALUES(default, 3, CURDATE(), CURDATE()+5, 3, 'admin', CURDATE()+5);
+INSERT INTO booking VALUES(default, 1, CURDATE(), date_add(CURDATE(), interval 5 day), 3, 'admin', date_add(CURDATE(), interval 5 day));
+INSERT INTO booking VALUES(default, 2, CURDATE(), date_add(CURDATE(), interval 5 day), 3, 'admin', date_add(CURDATE(), interval 5 day));
+INSERT INTO booking VALUES(default, 3, CURDATE(), date_add(CURDATE(), interval 5 day), 3, 'admin', date_add(CURDATE(), interval 5 day));
 
 CREATE TABLE orders(
 	id INTEGER NOT NULL auto_increment PRIMARY KEY,

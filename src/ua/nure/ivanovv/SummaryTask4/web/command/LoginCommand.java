@@ -31,7 +31,7 @@ public class LoginCommand extends Command {
 		log.trace("Request parameter: loging --> " + login);
 
 		String password = request.getParameter("password");
-
+		System.out.println(password);
 		String errorMessage = null;
 		String forward = Path.PAGE_ERROR_PAGE;
 
@@ -45,7 +45,7 @@ public class LoginCommand extends Command {
 		User user = new UserDao().findUserByLogin(login);
 		log.trace("Found in DB: user --> " + user);
 
-		if (user == null || !user.getPassword().equals(new UserDao().passwordByLogin(login))) {
+		if (!new UserDao().passwordByLogin(login, password)) {
 			errorMessage = "Cannot find user with such login/password";
 			session.setAttribute("errorMessage", errorMessage);
 			log.error("errorMessage --> " + errorMessage);

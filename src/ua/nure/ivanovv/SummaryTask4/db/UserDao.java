@@ -30,22 +30,23 @@ public class UserDao {
 
 	private static final String SQL_CHAGNE_ROLE = "UPDATE users SET role_id=? where login=?";
 
-	private static final String SQL_FIND_PASSWORD = "SELECT password from users where login=?";
+	private static final String SQL_FIND_PASSWORD = "SELECT * from users where login=? and password=sha2(?, 224)";
 
 	/**
-	 * Find certain user's password in hash.
+	 * Decision about, that password was typed wrong or not.
 	 *
 	 * @param loginUser String.
-	 * @return list of users.
+	 * @param pass String.
+	 * @return true if user.
 	 */
-	public String passwordByLogin(String loginUser) {
-		String password = null;
+	public boolean passwordByLogin(String loginUser, String pass) {
+		boolean password = false;
 		try (Connection con = DBManager.getInstance().getConnection();
 				PreparedStatement pstmt = con.prepareStatement(SQL_FIND_PASSWORD);) {
 			pstmt.setString(1, loginUser);
+			pstmt.setString(2, pass);
 			try (ResultSet rs = pstmt.executeQuery();) {
-				while (rs.next())
-					password = rs.getString(1);
+				password = rs.next();
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();

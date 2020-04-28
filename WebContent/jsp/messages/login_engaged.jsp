@@ -10,8 +10,15 @@
 	<div class="register">
 		<h2><fmt:message key="messeges_jsp.login_engaged" /></h2>
 		<div class="bookButton">
-						<button onclick="history.back()"><fmt:message key="messeges_jsp.back" /></button>
+						<button onclick="history.goBack()"><fmt:message key="messeges_jsp.back" /></button>
 				</div>
 	</div>
+	<script type="text/javascript">
+		function goBack() {
+			window.history.back();
+			location.reload(); 
+			window.location.replace("http://localhost:8080/FinalTask/login.jsp");
+		}
+	</script>
 </body>
 </html>

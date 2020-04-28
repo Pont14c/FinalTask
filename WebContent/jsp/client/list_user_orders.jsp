@@ -15,7 +15,7 @@
 				</h2>
 			</c:if>
 			<c:if test="${historyOrders.size()>0 }">
-				<div class="table-container" style="width: 670px;">
+				<div class="table-container" style="width: 670px;  overflow-x: hidden;">
 					<table style="border: black; border-style: ridge;">
 						<thead>
 							<tr>

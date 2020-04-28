@@ -14,10 +14,17 @@
 			<fmt:message key="messeges_jsp.wrong_password" />
 		</h2>
 		<div class="bookButton">
-			<button onclick="history.back()">
+			<button onclick="goBack()">
 				<fmt:message key="messeges_jsp.back" />
 			</button>
 		</div>
 	</div>
+	<script type="text/javascript">
+		function goBack() {
+			window.history.back();
+			location.reload(); 
+			window.location.replace("http://localhost:8080/FinalTask/login.jsp");
+		}
+	</script>
 </body>
 </html>

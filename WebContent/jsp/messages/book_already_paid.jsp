@@ -14,10 +14,17 @@
 			<fmt:message key="messeges_jsp.book_already_paid" />
 		</h2>
 		<div class="bookButton">
-			<button onclick="javascript:window.location = document.referrer;">
+			<button onclick="goBack()">
 				<fmt:message key="messeges_jsp.back" />
 			</button>
 		</div>
 	</div>
+	<script type="text/javascript">
+		function goBack() {
+			window.history.back();
+			location.reload(); 
+			window.location.replace("http://localhost:8080/FinalTask/controller?command=userOrders");
+		}
+	</script>
 </body>
 </html>
