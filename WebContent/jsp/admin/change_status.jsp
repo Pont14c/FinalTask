@@ -55,7 +55,11 @@
 		<h3>
 			<fmt:message key="change_status_jsp.title_condition" />
 		</h3>
+<<<<<<< HEAD
 		<form id="adminSetStatus"
+=======
+		<form id="adminSetStatus" style="height: 100%;"
+>>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 			action="/FinalTask/controller?command=selectByDay" method="post">
 			<input type="hidden" name="command" value="listRoom" />
 			<div class="styleOrder" style="margin: auto; width: 65%;">

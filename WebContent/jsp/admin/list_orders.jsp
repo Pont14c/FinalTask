@@ -37,8 +37,13 @@
 									<td>${order.getDateIn()}</td>
 									<td>${order.getDateOut()}</td>
 									<td><form id="adminReserve"
+<<<<<<< HEAD
 											action="/FinalTask/controller?command=reserveFortune"
 											style="height: 100%;" method="post">
+=======
+											action="/FinalTask/controller?command=reserveFortune" style="height: 100%;"
+											method="post">
+>>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 											<input type="hidden" name="command" value="reserveFortune" /><input
 												type="hidden" name="adminReserve"
 												value="${order.getLoginUser()}" /><input type="submit"
@@ -47,6 +52,7 @@
 												name="reserve" />
 										</form></td>
 									<td><form id="adminReserve"
+<<<<<<< HEAD
 											action="/FinalTask/controller?command=listRoomAdmin"
 											style="height: 100%;" method="post">
 											<input type="hidden" name="command" value="listRoom" /><input
@@ -54,6 +60,15 @@
 												value="${order.getLoginUser()}" /><input type="hidden"
 												name="dateIn" value="${order.getDateIn()}" /><input
 												type="hidden" name="price" value="${order.getPrice()}" /><input
+=======
+											action="/FinalTask/controller?command=listRoomAdmin" style="height: 100%;"
+											method="post">
+											<input type="hidden" name="command" value="listRoom" /><input
+												type="hidden" name="adminChoiseUser"
+												value="${order.getLoginUser()}" /><input type="hidden"
+												name="dateIn" value="${order.getDateIn()}" /><input type="hidden"
+												name="price" value="${order.getPrice()}" /><input
+>>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 												type="hidden" name="dateOut" value="${order.getDateOut()}" /><input
 												type="submit" id="buttonInTable"
 												style="padding-left: 15px; padding-right: 20px;"
@@ -61,6 +76,7 @@
 												name="reserve" />
 										</form></td>
 									<td><form id="adminReserve"
+<<<<<<< HEAD
 											action="/FinalTask/controller?command=removeOrder"
 											style="height: 100%;" method="post">
 											<input type="hidden" name="command" value="removeOrder" /><input
@@ -68,6 +84,14 @@
 												value="${order.getLoginUser()}" /><input type="submit"
 												id="buttonInTable"
 												style="min-height: 25px; margin-top: 0px;"
+=======
+											action="/FinalTask/controller?command=removeOrder" style="height: 100%;"
+											method="post">
+											<input type="hidden" name="command" value="removeOrder" /><input
+												type="hidden" name="adminReserve"
+												value="${order.getLoginUser()}" /><input type="submit"
+												id="buttonInTable" style="min-height: 25px; margin-top: 0px;"
+>>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 												value="<fmt:message key="change_status_jsp.client_choise" />"
 												name="reserve" />
 										</form></td>
@@ -78,8 +102,12 @@
 				</div>
 				<c:if test="${listRooms != null}">
 					<h3>
+<<<<<<< HEAD
 						<fmt:message key="change_status_jsp.alternative" />
 						${loginBook}
+=======
+						<fmt:message key="change_status_jsp.alternative" />	${loginBook}
+>>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 					</h3>
 					<c:if test="${listRooms.size()>0}">
 						<div class="table-container" style="height: 350px">
@@ -110,7 +138,11 @@
 													method="post">
 													<input type="hidden" name="adminChoise"
 														value="${room.getId()}" /> <input type="submit"
+<<<<<<< HEAD
 														style="height: 25px; margin-top: 0px; width: 100%; text-align: center; display: block;"
+=======
+														style="height: 25px; margin-top: 0px;"
+>>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 														value="<fmt:message key="list_orders_jsp.book" />"
 														name="reserve" />
 												</form></td>

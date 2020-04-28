@@ -14,11 +14,16 @@
 			<myTag:MyTag />
 		</h2>
 		<div class="bookButton">
+<<<<<<< HEAD
 			<button onclick="goBack()">
+=======
+			<button onclick="history.back()">
+>>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 				<fmt:message key="messeges_jsp.back" />
 			</button>
 		</div>
 	</div>
+<<<<<<< HEAD
 	<script type="text/javascript">
 		function goBack() {
 			window.history.back();
@@ -26,5 +31,7 @@
 			window.location.replace("http://localhost:8080/FinalTask/controller?command=chooseRoom");
 		}
 	</script>
+=======
+>>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 </body>
 </html>

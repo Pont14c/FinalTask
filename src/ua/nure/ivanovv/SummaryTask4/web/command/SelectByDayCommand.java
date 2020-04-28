@@ -32,7 +32,11 @@ public class SelectByDayCommand extends Command {
 		List<Booking> listBooks = new ReserveDao().findAllBooksByOneDate(dateIn);
 		log.trace("Found in DB: listBooks --> " + listBooks);
 		listBooks.sort((o1, o2) -> o1.getRoomId() - o2.getRoomId());
+<<<<<<< HEAD
 		System.out.println(listBooks);
+=======
+
+>>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 		session.setAttribute("listBooks", listBooks);
 		log.trace("Set the request attribute: listRooms --> " + listBooks);
 

@@ -36,9 +36,15 @@
 											</c:when>
 										</c:choose></td>
 									<td><form id="changeStatus"
+<<<<<<< HEAD
 											action="/FinalTask/controller?command=listUsers"
 											method="post">
 											<input type="hidden" name="command2" value="changeRole" /><input
+=======
+											action="/FinalTask/controller?command=changeRole"
+											method="post">
+											<input type="hidden" name="command" value="changeRole" /><input
+>>>>>>> d7c153ab667f5beab95a5e96bdfdd25e9eee1567
 												type="hidden" name="changeRoleLogin"
 												value="${user.getLogin()}" /> <input type="hidden"
 												name="changeRoleId" value="${user.getRoleId()}" /><input
