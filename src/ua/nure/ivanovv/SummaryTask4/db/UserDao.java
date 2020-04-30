@@ -46,9 +46,10 @@ public class UserDao {
 		List<User> list = new LinkedList<>();
 		try (Connection con = DBManager.getInstance().getConnection();
 				PreparedStatement pstmt = con.prepareStatement(SQL_ALL_HISTORY);) {
-			User temp = new User();
+			User temp;
 			try (ResultSet rs = pstmt.executeQuery();) {
 				while (rs.next()) {
+					temp = new User();
 					temp.setLogin(rs.getString(1));
 					temp.setCountBook(rs.getInt(2));
 					temp.setSumPay(rs.getInt(3));

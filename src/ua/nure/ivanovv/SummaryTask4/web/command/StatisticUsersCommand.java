@@ -29,7 +29,7 @@ public class StatisticUsersCommand extends Command {
 		User user = (User) request.getSession().getAttribute("user");
 		
 		List<User> listHistory = new UserDao().getHistoryAll();
-
+		System.out.println(listHistory);
 		session.setAttribute("listHistory", listHistory);
 		log.trace("admin obtain history of his all bookings -->" + user);
 		
