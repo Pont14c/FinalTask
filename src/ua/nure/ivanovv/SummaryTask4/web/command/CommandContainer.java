@@ -40,6 +40,7 @@ public class CommandContainer {
 		commands.put("payBook", new PayBookCommand());
 		commands.put("selectByDay", new SelectByDayCommand());
 		commands.put("listUsers", new ListUsersCommand());
+		commands.put("statisticUsers", new StatisticUsersCommand());
 		
 		log.debug("Command container was successfully initialized");
 		log.trace("Number of commands --> " + commands.size());

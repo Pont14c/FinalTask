@@ -15,6 +15,7 @@ public final class Path {
 	public static final String PAGE_CHAGNE_STATUS = "/jsp/admin/change_status.jsp";
 	public static final String PAGE_LIST_ORDERS = "/jsp/admin/list_orders.jsp";
 	public static final String PAGE_LIST_USER = "/jsp/admin/list_users.jsp";
+	public static final String PAGE_HISTORY_USER_ORDER = "/jsp/admin/history_users.jsp";
 
 	public static final String PAGE_LIST_LEAVE_ORDER = "/jsp/client/leave_order.jsp";
 	public static final String PAGE_LIST_ROOMS = "/jsp/client/list_rooms.jsp";

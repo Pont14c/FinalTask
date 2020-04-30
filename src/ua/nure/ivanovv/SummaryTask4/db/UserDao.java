@@ -3,6 +3,7 @@ package ua.nure.ivanovv.SummaryTask4.db;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
@@ -31,7 +32,35 @@ public class UserDao {
 	private static final String SQL_CHAGNE_ROLE = "UPDATE users SET role_id=? where login=?";
 
 	private static final String SQL_FIND_PASSWORD = "SELECT * from users where login=? and password=sha2(?, 224)";
+	
+	private static final String SQL_ALL_HISTORY = "select booking.login_user, count(status_room)," + 
+			"sum(rooms.price*DATEDIFF(booking.date_out,booking.date_in)) as sum from booking, rooms" + 
+			" where status_room = 2 and rooms.id=booking.id_room group by login_user;";
 
+	/**
+	 * List of users with their statistic about payment and count of bookings.
+	 *
+	 * @return list users.
+	 */
+	public List<User> getHistoryAll() {
+		List<User> list = new LinkedList<>();
+		try (Connection con = DBManager.getInstance().getConnection();
+				PreparedStatement pstmt = con.prepareStatement(SQL_ALL_HISTORY);) {
+			User temp = new User();
+			try (ResultSet rs = pstmt.executeQuery();) {
+				while (rs.next()) {
+					temp.setLogin(rs.getString(1));
+					temp.setCountBook(rs.getInt(2));
+					temp.setSumPay(rs.getInt(3));
+					list.add(temp);
+				}
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		return list;
+	}
+	
 	/**
 	 * Decision about, that password was typed wrong or not.
 	 *

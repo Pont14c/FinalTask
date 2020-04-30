@@ -23,7 +23,7 @@
 		function goBack() {
 			window.history.back();
 			location.reload(); 
-			window.location.replace("http://localhost:8080/FinalTask/controller?command=leaveOrderPage");
+			window.location.replace("http://localhost:8080/FinalTask/controller?command=userOrders");
 		}
 	</script>
 </body>

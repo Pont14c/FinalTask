@@ -27,7 +27,6 @@ public class ContextListener implements ServletContextListener {
 
 		ServletContext servletContext = event.getServletContext();
 		initLog4J(servletContext);
-		initCommandContainer();
 
 		log("Servlet context initialization finished");
 	}
@@ -46,23 +45,6 @@ public class ContextListener implements ServletContextListener {
 		}
 
 		log("Log4J initialization finished");
-	}
-
-	/**
-	 * Initializes CommandContainer.
-	 * 
-	 * @param servletContext
-	 */
-	private void initCommandContainer() {
-		log.debug("Command container initialization started");
-
-		try {
-			Class.forName("ua.nure.ivanovv.SummaryTask4.web.command.CommandContainer");
-		} catch (ClassNotFoundException ex) {
-			throw new RuntimeException(ex);
-		}
-
-		log.debug("Command container initialization finished");
 	}
 
 	private void log(String msg) {

@@ -25,7 +25,7 @@ public class Controller extends HttpServlet {
 	private static final Logger log = Logger.getLogger(Controller.class);
 
 	private static final String[] forwardCommands = { "listOrders", "changeStatus", "logout", "leaveOrderPage",
-			"chooseRoom", "userOrders", "listRoom", "removeOrder", "sortListBooks", "listRoomAdmin", "language", "listUsers" };
+			"chooseRoom", "userOrders", "listRoom", "removeOrder", "sortListBooks", "listRoomAdmin", "language", "listUsers", "statisticUsers" };
 
 	public Controller() {
 	}

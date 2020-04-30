@@ -33,6 +33,8 @@
 					key="header_jspf.home" /></a></li>
 		<c:choose>
 			<c:when test="${userRole.name == 'admin' }">
+				<li><a href="/FinalTask/controller?command=statisticUsers"><fmt:message
+							key="header_jspf.statistics" /></a></li>
 				<li><a href="/FinalTask/controller?command=listUsers"><fmt:message
 							key="header_jspf.Users" /></a></li>
 				<li><a href="/FinalTask/controller?command=listOrders"><fmt:message

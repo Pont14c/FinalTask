@@ -51,7 +51,7 @@
 		<filter-class>ua.nure.ivanovv.SummaryTask4.web.filter.CommandAccessFilter</filter-class>
 		<init-param>
 			<param-name>admin</param-name>
-			<param-value>listUsers selectByDay changeStatus sortList listOrders reserve removeOrder listRoomAdmin sortListBooks reserveFortune</param-value>
+			<param-value>statisticUsers listUsers selectByDay changeStatus sortList listOrders reserve removeOrder listRoomAdmin sortListBooks reserveFortune</param-value>
 		</init-param>
 		<init-param>
 			<param-name>client</param-name>
