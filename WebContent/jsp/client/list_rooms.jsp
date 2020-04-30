@@ -61,6 +61,12 @@
 									<td>${room.getRoomLvl()}</td>
 									<td><form id="clientChoise"
 											action="/FinalTask/controller?command=reserve" method="post">
+											<c:if test="${userRole.name == 'client' }">
+												<input type="hidden" name="clientBook" value="clientBook"/>
+											</c:if>
+											<c:if test="${userRole.name == 'admin' }">
+												<input type="hidden" name="adminBook" value="adminBook"/>
+											</c:if>
 											<input type="hidden" name="command" value="reserve" /><input
 												type="hidden" name="price" value="${room.getPrice()}" /> <input
 												type="hidden" name="clientChoise" value="${room.getId()}" /><input
